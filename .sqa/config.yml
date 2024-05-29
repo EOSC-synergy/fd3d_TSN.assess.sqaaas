@@ -1,0 +1,42 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/2.1.1
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/JanPremus/fd3d_TSN:
+      branch: master
+      repo: https://github.com/JanPremus/fd3d_TSN
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/JanPremus/fd3d_TSN git:
+        commands:
+        - /usr/bin/env sh .sqa/script.pokey-harlequin-dingo.sh
+        container: qc.acc_gummy-khaki-donkey
+  QC.Doc:
+    repos:
+      github.com/JanPremus/fd3d_TSN find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.craggy-chestnut-millipede.sh
+        container: qc.doc_squeaky-aqua-vulture
+      github.com/JanPremus/fd3d_TSN git:
+        commands:
+        - /usr/bin/env sh .sqa/script.sleazy-flax-bat.sh
+        container: qc.doc_foggy-cardinal-mouse
+  QC.Lic:
+    repos:
+      github.com/JanPremus/fd3d_TSN licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.jumpy-ochre-whippet.sh
+        container: qc.lic_lousy-cream-angora
+  QC.Ver:
+    repos:
+      github.com/JanPremus/fd3d_TSN get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.jumpy-violet-snake.sh
+        container: qc.ver_shaky-goldenrod-shrimp
+timeout: 5400
