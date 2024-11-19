@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: release/2.1.1
+      branch: main
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/JanPremus/fd3d_TSN:
       branch: master
@@ -15,28 +15,28 @@ sqa_criteria:
     repos:
       github.com/JanPremus/fd3d_TSN git:
         commands:
-        - /usr/bin/env sh .sqa/script.fuzzy-tan-coati.sh
-        container: qc.acc_shabby-black-spider
+        - /usr/bin/env sh .sqa/script.breezy-rust-fossa.sh
+        container: qc.acc_crabby-indigo-blue
   QC.Doc:
     repos:
       github.com/JanPremus/fd3d_TSN find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.chewy-peach-wrasse.sh
-        container: qc.doc_flaky-silver-eagle
+        - /usr/bin/env sh .sqa/script.squirrely-turquoise-wasp.sh
+        container: qc.doc_sloppy-white-okapi
       github.com/JanPremus/fd3d_TSN git:
         commands:
-        - /usr/bin/env sh .sqa/script.pretty-pink-mastiff.sh
-        container: qc.doc_hazy-tan-oriole
+        - /usr/bin/env sh .sqa/script.muggy-taupe-insect.sh
+        container: qc.doc_gummy-crimson-boar
   QC.Lic:
     repos:
       github.com/JanPremus/fd3d_TSN licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.stinky-peach-flamingo.sh
-        container: qc.lic_lousy-sapphire-argentino
+        - /usr/bin/env sh .sqa/script.lousy-chartreuse-tapir.sh
+        container: qc.lic_lumpy-peach-ladybird
   QC.Ver:
     repos:
       github.com/JanPremus/fd3d_TSN get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.lousy-thistle-moorhen.sh
-        container: qc.ver_ready-charcoal-scorpion
+        - /usr/bin/env sh .sqa/script.muggy-burgundy-hare.sh
+        container: qc.ver_messy-ochre-dormouse
 timeout: 5400
